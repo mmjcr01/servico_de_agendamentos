@@ -39,7 +39,7 @@ module.exports = (sequelize) => {
       },
     },
     {
-      tableName: "Integrations",
+      tableName: "integrations",
       timestamps: false,
       comment: "Representa integrações externas",
     },

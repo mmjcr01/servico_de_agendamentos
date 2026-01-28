@@ -33,7 +33,7 @@ module.exports = (sequelize) => {
       },
     },
     {
-      tableName: "Plans",
+      tableName: "plans",
       timestamps: false,
       comment: "Representa planos de assinatura",
     },

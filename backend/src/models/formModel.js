@@ -28,7 +28,7 @@ module.exports = (sequelize) => {
       },
     },
     {
-      tableName: "Forms",
+      tableName: "forms",
       timestamps: false,
       comment: "Representa formulários customizados",
     },

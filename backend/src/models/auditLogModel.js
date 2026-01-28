@@ -39,7 +39,7 @@ module.exports = (sequelize) => {
       },
     },
     {
-      tableName: "AuditLogs",
+      tableName: "audits",
       timestamps: false,
       comment: "Representa logs de atividades",
     },

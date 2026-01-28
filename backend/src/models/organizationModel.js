@@ -72,7 +72,7 @@ module.exports = (sequelize) => {
       },
     },
     {
-      tableName: "Organizations",
+      tableName: "organizations",
       timestamps: false,
       comment: "Representa organizações ou profissionais autônomos",
     },

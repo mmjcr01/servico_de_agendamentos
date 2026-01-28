@@ -39,7 +39,7 @@ module.exports = (sequelize) => {
       },
     },
     {
-      tableName: "UserPlans",
+      tableName: "userplans",
       timestamps: false,
       comment: "Representa assinaturas de usuários",
     },

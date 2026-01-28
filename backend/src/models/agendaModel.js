@@ -44,7 +44,7 @@ module.exports = (sequelize) => {
       },
     },
     {
-      tableName: "Agendas",
+      tableName: "agendas",
       timestamps: false,
       comment: "Representa calendários ou agendas",
     },

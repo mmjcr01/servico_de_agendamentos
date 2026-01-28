@@ -18,7 +18,7 @@ module.exports = (sequelize) => {
       },
     },
     {
-      tableName: "Agenda_Addresses",
+      tableName: "agenda_addresses",
       timestamps: false,
       comment: "Tabela de junção para endereços de agendas",
     },

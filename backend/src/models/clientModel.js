@@ -54,7 +54,7 @@ module.exports = (sequelize) => {
       },
     },
     {
-      tableName: "Clients",
+      tableName: "clients",
       timestamps: false,
       comment: "Representa clientes específicos",
     },

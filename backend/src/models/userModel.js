@@ -73,7 +73,7 @@ module.exports = (sequelize) => {
       },
     },
     {
-      tableName: "Users",
+      tableName: "users",
       timestamps: false,
       comment: "Representa usuários do sistema",
     },

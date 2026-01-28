@@ -34,7 +34,7 @@ module.exports = (sequelize) => {
       },
     },
     {
-      tableName: "Reports",
+      tableName: "reports",
       timestamps: false,
       comment: "Representa relatórios gerados",
     },

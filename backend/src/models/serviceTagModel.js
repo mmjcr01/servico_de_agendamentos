@@ -18,7 +18,7 @@ module.exports = (sequelize) => {
       },
     },
     {
-      tableName: "Service_Tags",
+      tableName: "service_tags",
       timestamps: false,
       comment: "Tabela de junção para etiquetas de serviços",
     },

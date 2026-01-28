@@ -34,7 +34,7 @@ module.exports = (sequelize) => {
       },
     },
     {
-      tableName: "FormResponses",
+      tableName: "formresponses",
       timestamps: false,
       comment: "Representa respostas de formulários",
     },

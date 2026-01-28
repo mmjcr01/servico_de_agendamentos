@@ -78,7 +78,7 @@ module.exports = (sequelize) => {
       },
     },
     {
-      tableName: "Appointments",
+      tableName: "appointments",
       timestamps: false,
       comment: "Representa agendamentos de serviços",
     },

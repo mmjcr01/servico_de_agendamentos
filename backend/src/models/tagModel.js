@@ -29,7 +29,7 @@ module.exports = (sequelize) => {
       },
     },
     {
-      tableName: "Tags",
+      tableName: "tags",
       timestamps: false,
       comment: "Representa etiquetas customizáveis",
     },

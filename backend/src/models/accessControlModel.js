@@ -28,7 +28,7 @@ module.exports = (sequelize) => {
       },
     },
     {
-      tableName: "AccessControls",
+      tableName: "access_controls",
       timestamps: false,
       comment: "Representa permissões e acessos de usuários",
     },

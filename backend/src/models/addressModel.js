@@ -54,7 +54,7 @@ module.exports = (sequelize) => {
       },
     },
     {
-      tableName: "Addresses",
+      tableName: "addresses",
       timestamps: false,
       comment: "Representa endereços de atendimento",
     },

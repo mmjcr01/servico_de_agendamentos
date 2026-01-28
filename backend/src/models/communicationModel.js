@@ -45,7 +45,7 @@ module.exports = (sequelize) => {
       },
     },
     {
-      tableName: "Communications",
+      tableName: "communications",
       timestamps: false,
       comment: "Representa notificações enviadas",
     },

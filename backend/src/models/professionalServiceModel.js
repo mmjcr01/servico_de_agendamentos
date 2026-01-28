@@ -38,7 +38,7 @@ module.exports = (sequelize) => {
       },
     },
     {
-      tableName: "Professionals_Services",
+      tableName: "professionals_services",
       timestamps: false,
       comment: "Junção para customizações de serviços por profissional",
     },
