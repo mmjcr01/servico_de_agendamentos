@@ -1,4 +1,6 @@
 const express = require("express");
+const bcrypt = require("bcrypt");
+const saltrounds = 10;
 
 module.exports = (models) => {
   const router = express.Router();
@@ -37,13 +39,15 @@ module.exports = (models) => {
 
   router.post("/", async (req, res) => {
     try {
-      const { email, name, role } = req.body;
-      if (!email || !name || !role) {
+      const { email, name, role, password_hash } = req.body;
+      if (!email || !name || !role || !password_hash) {
         return res
           .status(400)
           .json({ error: "Email, nome e role são obrigatórios!" });
       }
-      const newUser = await models.User.create(req.body);
+      const hash = bcrypt.hashSync(password_hash, saltrounds)
+      const newUser = await models.User.create({...req.body,
+        password_hash: hash });
       res.status(201).json(newUser);
     } catch (error) {
       res.status(500).json({ error: error.message });
