@@ -19,6 +19,7 @@ const routesReports = require("./src/routes/reports");
 const routesServices = require("./src/routes/services");
 const routesTags = require("./src/routes/tags");
 const routesUsers = require("./src/routes/users");
+const routesLogin = require("./src/routes/login");
 
 //função para autenticar a conexão com o banco
 
@@ -26,11 +27,8 @@ const routesUsers = require("./src/routes/users");
   try {
     await sequelize.authenticate();
     console.log("✅ Conectado ao MySQL com sucesso");
-    
-
     // Inicializar modelos apenas após conexão bem-sucedida
     models = initModels(sequelize);
-
     app.use("/addresses", routesAddresses(models));
     app.use("/agendas", routesAgendas(models));
     app.use("/appointments", routesAppointments(models));
@@ -44,6 +42,7 @@ const routesUsers = require("./src/routes/users");
     app.use("/services", routesServices(models));
     app.use("/tags", routesTags(models));
     app.use("/users", routesUsers(models));
+    app.use("/login", routesLogin(models));
 
     app.listen(port, () => {
       console.log(`servidor iniciado na porta: ${port}`);
