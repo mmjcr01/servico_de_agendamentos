@@ -18,8 +18,8 @@ module.exports = (models) =>{
       res.json(client)
     });
     router.post("/", async(req, res) =>{
-      const {client_id, name, email, phone, address } = req.body
-      if ( !client_id || !name || !email || !phone || !address )
+      const { name, email, phone, address } = req.body
+      if ( !name || !email || !phone || !address )
         return res.status(401).send("Campos obrigatórios não preenchidos!");
       const newClient = await models.Client.create({...req.body});
       res.json(newClient);

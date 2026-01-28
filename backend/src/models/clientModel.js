@@ -18,12 +18,12 @@ module.exports = (sequelize) => {
       },
       name: {
         type: DataTypes.STRING(255),
-        allowNull: true,
+        allowNull: false,
         comment: "Nome do cliente",
       },
       email: {
         type: DataTypes.STRING(255),
-        allowNull: true,
+        allowNull: false,
         comment: "Email do cliente",
       },
       phone: {

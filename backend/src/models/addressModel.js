@@ -13,17 +13,17 @@ module.exports = (sequelize) => {
       },
       street: {
         type: DataTypes.STRING(255),
-        allowNull: true,
+        allowNull: false,
         comment: "Nome da rua",
       },
       city: {
         type: DataTypes.STRING(100),
-        allowNull: true,
+        allowNull: false,
         comment: "Cidade",
       },
       state: {
         type: DataTypes.STRING(100),
-        allowNull: true,
+        allowNull: false,
         comment: "Estado ou província",
       },
       zip_code: {
@@ -34,7 +34,7 @@ module.exports = (sequelize) => {
       country: {
         type: DataTypes.STRING(100),
         defaultValue: "BR",
-        allowNull: true,
+        allowNull: false,
         comment: "País",
       },
       latitude: {

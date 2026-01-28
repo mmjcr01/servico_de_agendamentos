@@ -3,10 +3,9 @@ const { sequelize } = require("./src/database/database");
 const { initModels } = require("./src/models/index");
 const app = express();
 const port = 3000;
-app.use(express.json);
-let conexaofeita = false;
+app.use(express.json());
+let models;
 
-const models = initModels(sequelize);
 const routesAddresses = require("./src/routes/addresses");
 const routesAgendas = require("./src/routes/agendas");
 const routesAppointments = require("./src/routes/appointments");
@@ -27,27 +26,30 @@ const routesUsers = require("./src/routes/users");
   try {
     await sequelize.authenticate();
     console.log("✅ Conectado ao MySQL com sucesso");
-    conexaofeita = true;
+    
+
+    // Inicializar modelos apenas após conexão bem-sucedida
+    models = initModels(sequelize);
+
+    app.use("/addresses", routesAddresses(models));
+    app.use("/agendas", routesAgendas(models));
+    app.use("/appointments", routesAppointments(models));
+    app.use("/clients", routesClients(models));
+    app.use("/communications", routesCommunications(models));
+    app.use("/forms", routesForms(models));
+    app.use("/integrations", routesIntegrations(models));
+    app.use("/organizations", routesOrganizations(models));
+    app.use("/plans", routesPlans(models));
+    app.use("/reports", routesReports(models));
+    app.use("/services", routesServices(models));
+    app.use("/tags", routesTags(models));
+    app.use("/users", routesUsers(models));
+
+    app.listen(port, () => {
+      console.log(`servidor iniciado na porta: ${port}`);
+    });
   } catch (error) {
     console.error("❌ Erro ao conectar no banco:", error);
     process.exit(1); // em caso de erro, esse comando encerra o sistema de forma segura.
   }
 })();
-
-app.use("/addresses", routesAddress(models));
-app.use("/agendas", routesAgenda(models));
-app.use("/appointments", routesAppointment(models));
-app.use("/clients", routesClient(models));
-app.use("/communications", routesCommunication(models));
-app.use("/forms", routesForm(models));
-app.use("/integrations", routesIntegration(models));
-app.use("/organizations", routesOrganization(models));
-app.use("/plans", routesPlan(models));
-app.use("/reports", routesReport(models));
-app.use("/services", routesService(models));
-app.use("/tags", routesTag(models));
-app.use("/users", routesUser(models));
-
-app.listen(port, (req, res) => {
-  console.log(`servidor iniciado na porta: ${port}`);
-});

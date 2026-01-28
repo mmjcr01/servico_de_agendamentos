@@ -24,12 +24,12 @@ module.exports = (sequelize) => {
       },
       password_hash: {
         type: DataTypes.STRING(255),
-        allowNull: true,
+        allowNull: false,
         comment: "Senha criptografada",
       },
       name: {
         type: DataTypes.STRING(255),
-        allowNull: true,
+        allowNull: false,
         comment: "Nome completo do usuário",
       },
       phone: {
